@@ -21,6 +21,13 @@ It leverages Amazon Bedrock to add AI-powered automation—summarizing security 
 - **AI Automation (Amazon Bedrock):** Summarize security findings, generate incident reports, and answer natural language queries on runbooks.
 - **Compliance & Governance:** SCPs, Config rules, CIS/FSBP mapping, runbooks, and dashboards.
 
+## Repo map (where things are)
+- `docs/diagrams/` — architecture diagrams (PNG/JPG + editable source)
+- `docs/decisions/` — ADRs (why key choices were made)
+- `docs/runbooks/` — incident response playbooks
+- `docs/evidence/` — screenshots/log excerpts (audit-style evidence)
+- `infra/terraform/` — IaC scaffolding (placeholders until implemented)
+
 ## Architecture Diagram
 
 ![Architecture](./architecture.jpg)
