@@ -1,0 +1,9 @@
+## How decisions are documented (ADR method)
+
+We document key architecture decisions using ADRs. Each ADR answers:
+
+1. Which alternatives did you consider?
+2. Why did you make these specific architectural choices?
+3. How are you balancing priorities like performance, cost, and security?
+
+See: `docs/decisions/`
