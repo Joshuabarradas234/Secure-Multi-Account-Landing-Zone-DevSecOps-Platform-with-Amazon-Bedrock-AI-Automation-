@@ -1,4 +1,4 @@
-# ADR-000X: <title>
+# docs/decisions/ADR-0002
 
 ## Status
 Proposed | Accepted | Superseded
