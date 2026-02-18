@@ -21,16 +21,74 @@ It leverages Amazon Bedrock to add AI-powered automation—summarizing security 
 - **AI Automation (Amazon Bedrock):** Summarize security findings, generate incident reports, and answer natural language queries on runbooks.
 - **Compliance & Governance:** SCPs, Config rules, CIS/FSBP mapping, runbooks, and dashboards.
 
+## Architecture Diagram
+
+![Architecture](./architecture.jpg)
+
+## Decision-making (ADRs)
+
+This repo uses **Architecture Decision Records (ADRs)** to document *why* key design choices were made.
+
+Each ADR answers:
+1) **Which alternatives** were considered?
+2) **Why this choice** was selected (security / operability / speed)?
+3) **How trade-offs** were balanced (performance vs cost vs security)?
+
+📌 ADRs live here: `docs/decisions/`  
+Suggested reading order:
+- `ADR-0001-multi-account-structure.md` (landing zone + org design)
+- `ADR-0002-logging-and-security-services.md` (Security Hub, GuardDuty, Config, etc.)
+
 ## Evidence (portfolio)
 - Architecture diagram: docs/diagrams/architecture.jpg
 - ADRs: docs/decisions/
 - Runbooks: docs/runbooks/
 - Evidence (screenshots/logs): docs/evidence/ (to be added)
+## Business perspective (value + cost)
 
-## Architecture Diagram
+### Why a business would pay for this
+This platform reduces *real operational risk* and improves *audit readiness*:
 
-![Architecture](./architecture.jpg)
+- **Lower breach likelihood** via centralized controls (SCP guardrails, least privilege, continuous monitoring)
+- **Faster incident response** with Security Hub + GuardDuty/Inspector findings feeding runbooks
+- **Audit/compliance efficiency** via centralized evidence (CloudTrail/Config + immutable S3 archive patterns)
+- **Developer velocity with safety** (DevSecOps pipeline + policy-as-code + supply-chain scanning)
+- **Executive visibility** through consistent security reporting across accounts/environments
 
+### Monthly cost model (what drives spend)
+Monthly running cost is dominated by a small set of drivers:
+
+1) **Logging & retention**
+   - CloudTrail / Config / VPC Flow Logs / Security Lake storage & query
+   - Longer retention + higher log volume => higher cost
+
+2) **Security services**
+   - Findings volume + number of resources/accounts affects tools like GuardDuty, Inspector, Macie, Security Hub
+
+3) **Network egress / NAT**
+   - NAT Gateway + data processing can become a major cost in private subnet designs
+
+4) **CI/CD + scanning**
+   - Artifact storage, container scanning, SBOM generation, pipeline runs
+
+5) **AI automation (optional)**
+   - If enabled, cost depends on: how many incidents/findings are summarized and the size of prompts/responses
+
+### Practical cost ranges (order-of-magnitude)
+**Small lab / portfolio demo:** low, if you keep log volume tiny and retention short.  
+**Small business / 2–5 accounts:** typically moderate if Security Hub/GuardDuty/Inspector are enabled and logs retained.  
+**Enterprise / many accounts + high logging:** cost grows mainly with log volume, retention, and SIEM/query usage.
+
+> Tip: the “knobs” that most reduce monthly cost are: log retention policies, Security Lake/SIEM query patterns, NAT usage, and scoping Macie/Inspector coverage.
+
+### How to estimate it properly (what you'd do in a real org)
+- Use AWS Pricing Calculator with assumptions:
+  - number of accounts
+  - GB/day of logs (CloudTrail, VPC Flow Logs, app logs)
+  - retention period (days/months)
+  - number of workloads/resources scanned
+  - incident volume for optional AI summaries
+- Track spend by tagging (env/account/team) and set budgets + alerts per account.
 
 ---
 ## Project status
