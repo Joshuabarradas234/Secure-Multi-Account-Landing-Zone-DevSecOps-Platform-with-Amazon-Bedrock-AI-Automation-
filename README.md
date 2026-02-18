@@ -29,7 +29,8 @@ It leverages Amazon Bedrock to add AI-powered automation—summarizing security 
 
 ## Architecture Diagram
 
-![Architecture](docs/diagrams/architecture.jpg)
+![Architecture](./architecture.jpg)
+
 
 ---
 ## Project status
