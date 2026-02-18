@@ -32,19 +32,17 @@ It leverages Amazon Bedrock to add AI-powered automation—summarizing security 
 
 ![Architecture](./architecture.jpg)
 
-## Decision-making (ADRs)
+## How decisions are documented (ADR method)
 
-This repo uses **Architecture Decision Records (ADRs)** to document *why* key design choices were made.
+We document key architecture decisions using ADRs. Each ADR answers:
+1. Which alternatives were considered?
+2. Why this choice was selected (security / operability / cost / delivery speed)?
+3. How trade-offs were balanced (performance vs cost vs security)?
 
-Each ADR answers:
-1) **Which alternatives** were considered?
-2) **Why this choice** was selected (security / operability / speed)?
-3) **How trade-offs** were balanced (performance vs cost vs security)?
+![Decision-making process](./docs/evidence/decision-making-process.jpg)
 
-📌 ADRs live here: `docs/decisions/`  
-Suggested reading order:
-- `ADR-0001-multi-account-structure.md` (landing zone + org design)
-- `ADR-0002-logging-and-security-services.md` (Security Hub, GuardDuty, Config, etc.)
+See: ./docs/decisions/
+
 
 ## Evidence (portfolio)
 - Architecture diagram: docs/diagrams/architecture.jpg
