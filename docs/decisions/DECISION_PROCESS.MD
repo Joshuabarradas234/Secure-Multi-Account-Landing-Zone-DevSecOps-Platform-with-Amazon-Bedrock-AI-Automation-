@@ -64,3 +64,8 @@ For each major decision, options were scored against these criteria:
 - **Alternatives considered:** self-hosted LLM stack; unmanaged chatbot approach
 - **Why:** managed foundation models, easier guardrails, supports grounded responses for runbooks/policy
 - **Trade-offs:** must design prompts/guardrails carefully; benefit is speed + consistency
+
+## Evidence (audit trail)
+
+See the evidence pack here:
+- [Evidence pack](../evidence/README.md)
