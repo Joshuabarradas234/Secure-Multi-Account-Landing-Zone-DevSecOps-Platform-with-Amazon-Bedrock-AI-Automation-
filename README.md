@@ -1,6 +1,6 @@
 # Secure Multi-Account Landing Zone & DevSecOps Platform (with Amazon Bedrock AI Automation)
 
-![CI](https://github.com/Joshuabarradas234/Secure-Multi-Account-Landing-Zone-DevSecOps-Platform-with-Amazon-Bedrock-AI-Automation/actions/workflows/blank.yml/badge.svg)
+[![CI](https://github.com/Joshuabarradas234/Secure-Multi-Account-Landing-Zone-DevSecOps-Platform-with-Amazon-Bedrock-AI-Automation-/actions/workflows/blank.yml/badge.svg)](https://github.com/Joshuabarradas234/Secure-Multi-Account-Landing-Zone-DevSecOps-Platform-with-Amazon-Bedrock-AI-Automation-/actions/workflows/blank.yml)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Demo / Portfolio Mode (Read First)
