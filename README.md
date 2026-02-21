@@ -1,5 +1,5 @@
 # Secure Multi-Account Landing Zone & DevSecOps Platform (with Amazon Bedrock AI Automation)
-
+![CI](https://github.com/Joshuabarradas234/Secure-Multi-Account-Landing-Zone-DevSecOps-Platform-with-Amazon-Bedrock-AI-Automation/actions/workflows/blank.yml/badge.svg)
 ## Overview
 This project documents a secure, enterprise-style AWS cloud foundation using a multi-account structure, zero-trust networking, centralized logging, and an automated DevSecOps pipeline. It integrates federated SSO (Azure Entra ID → AWS IAM Identity Center), enforces least privilege and encryption-by-default, and demonstrates how detection, response, and compliance workflows can be standardized across accounts.
 
